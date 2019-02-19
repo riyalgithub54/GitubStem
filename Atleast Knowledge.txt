@@ -1,0 +1,418 @@
+Can you please confirm that these skillsets would be able to be found for a lead developer?: 
+=========================================================================================== 
+From or Developer Lead 
+  
+Need to have: 
+LAMP Stack 
+Redis 
+Postgresql 
+Framework Experience (Laravel) 
+Version control with git 
+HTML, CSS, JS 
+jQuery 
+Linux Admin/configuration experience 
+Building and interacting with APIs 
+  
+Nice to have: 
+Python 
+React JS 
+Phonegap/Cordova 
+
+
+
+=========================================================================================== 
+=========================================================================================== 
+--------------------------------------------------------------------------
+Once Visit :- If all Tasks Done Just Visit ITStuffSolutions
+--------------------------------------------------------------------------
+							11-06-2018								OutPut
+--------------------------------------------------------------------------
+1) Prerequisites  Software Installation								Done
+2) Simple UserCrud Application										Done
+
+--------------------------------------------------------------------------
+							12-06-2018								OutPut
+--------------------------------------------------------------------------
+1) Multi-Auth														Done
+2) Admin Theme Integration											Done
+
+--------------------------------------------------------------------------
+							13-06-2018								OutPut
+--------------------------------------------------------------------------
+1) Employee Multi-Auth												Done
+2) Employee Admin Theme Integration									Done
+3) Login with extra parameter [ Ex :- login only if status = 1 ]	Done
+
+--------------------------------------------------------------------------
+							14-06-2018								OutPut
+--------------------------------------------------------------------------
+1) Dynamic form														Done
+2) Datatables  [ Server Side  ] 									Done
+3) Import & Export Functionality									Done
+
+--------------------------------------------------------------------------
+							15-06-2018								OutPut
+--------------------------------------------------------------------------
+1) At a time One user Logout										Done									
+2) Toastr Implement													Done
+3) Ajax Full CRUD with Validation
+4) Forget / Reset Password											Done
+5) Select 2
+6) Country / State / City
+7) Datatable editable
+8) Multiple Delete
+9) Login With Socialite
+10) Log Viewer
+11) OPEN and MODAL use in Form Tag
+12) Job / Event / Listener
+
+--------------------------------------------------------------------------
+							18-06-2018								OutPut
+--------------------------------------------------------------------------
+1) https://stemmons.com/implementation/
+2) http://dev.stemmons.com/uses/
+3) http://impreza.us-themes.com/elements/message-box/
+4) http://dev.stemmons.com/wp-admin/post.php?post=9221&action=edit
+
+=========================================================================================== 
+=========================================================================================== 
+
+=============================================================================
+Git Steps :-
+-----------------------------------------------------------------------------
+=> git log
+=> git init
+=> git status
+=> git add.
+=> git commit -m 'Initial forum'
+=> git remote add origin URL
+=> git push -u origin master
+
+=> alias gs
+=> gs = 'git status'
+
+=> alias gl
+=> gl = 'git log'
+
+=============================================================================
+===> After remove / change any files
+-----------------------------------------------------------------------------
+1) gs
+2) git rm notes.txt
+3) git rm tags
+4) git commit -m 'remove unnecessary files'
+=============================================================================
+After changes files push your code :-
+-----------------------------------------------------------------------------
+0) git status
+1) git add .
+2) git commit -m 'add new files'
+3) git push
+
+=========================================================================================== 
+===========================================================================================
+
+/* =============== Part 5 Cascading referential integrity constraint =============== */
+select * from tblGender
+select * from tblPerson
+
+Insert into tblPerson (ID, Name, Email, GenderId) values (8, 'Priyang', 'Priyang@gmail.com', 1)
+Insert into tblPerson (ID, Name, Email, GenderId) values (9, 'Trish', 'Trish@gmail.com', NULL)
+Insert into tblPerson (ID, Name, Email, GenderId) values (12, 'Zoya', 'zoya@gmail.com', 2)
+
+ALTER TABLE tblPerson 
+ADD CONSTRAINT DF_tblPerson_GenderId
+DEFAULT 3 FOR GENDERID
+
+ALTER TABLE tblPerson
+DROP CONSTRAINT DF_tblPerson_GenderId
+
+Alter table tblPerson
+ALTER TABLE employees
+  ADD last_name VARCHAR(50);
+
+/* =============== Part 6 Adding Check Point =============== */
+select * from tblGender
+select * from tblPerson
+
+ALTER TABLE tblPerson
+ADD Age INT;
+
+ALTER TABLE tblPerson
+Drop Constraint CK_tblPerson_Age
+
+ALTER TABLE tblPerson
+Add Constraint CK_tblPerson_Age CHECK (Age > 0 AND Age < 150)
+
+Insert into tblPerson (ID, Name, Email, GenderId, Age) values (11, 'Priyang', 'Priyang@gmail.com', 1, 10)
+Delete from tblPerson where ID=11
+
+/* =============== Part 7 Identity Column in SQL Server =============== */
+select * from tblPerson1
+Insert into tblPerson1 values ('Priya')
+Delete from tblPerson1 where PersonId = 3
+
+Set Identity_Insert tblPerson1 OFF
+Insert into tblPerson1 (PersonId, Name) values (1,'Riyal')
+
+Delete from tblPerson1
+DBCC CHECKIDENT (tblPerson1, RESEED, 0)
+Insert into tblPerson1 values ('Krunal')
+select * from tblPerson1
+
+/* =============== Part 8  How to get the last generated identity column value in SQL Server =============== */
+Create Table Test1
+(
+	ID int identity(1,1),
+	Value nvarchar(20)
+)
+Create Table Test2
+(
+	ID int identity(1,1),
+	Value nvarchar(20)
+)
+
+
+INSERT INTO Test2 VALUES ('AAA')
+
+SELECT * FROM Test1
+SELECT * FROM Test2
+
+SELECT SCOPE_IDENTITY()
+SELECT @@IDENTITY
+SELECT IDENT_CURRENT('Test2')
+
+CREATE TRIGGER trForInsert on Test1 for Insert
+as
+Begin
+	Insert into Test2 Values('YYYY')
+End
+
+/* =============== Part 9 Unique Key Constraint =============== */
+Alter Table tblPerson
+Add Constraint UQ_tblPerson_Email Unique(Email)
+
+ALTER TABLE tblPerson
+DROP CONSTRAINT UQ_tblPerson_Email
+
+/* ========== Part 10 Select Statement in SQL Server ========== */
+ALTER TABLE tblPerson
+Add City VARCHAR(50);
+
+SELECT DISTINCT city from tblPerson
+SELECT DISTINCT name, city from tblPerson
+
+SELECT * from tblPerson where city = 'USA'
+SELECT * from tblPerson where city <> 'USA'
+
+
+
+/* ========== Part 12 Joins in sql server ========== */
+select * from tblDepartment
+select * from tblEmployee
+
+select Name, Gender, Salary, DepartmentName from tblEmployee left Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+
+select Name, Gender, Salary, DepartmentName from tblEmployee right Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+
+select Name, Gender, Salary, DepartmentName from tblEmployee Inner Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+select Name, Gender, Salary, DepartmentName from tblEmployee Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+
+select Name, Gender, Salary, DepartmentName from tblEmployee full outer Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+select Name, Gender, Salary, DepartmentName from tblEmployee full Join tblDepartment on tblEmployee.DepartmentId = tblDepartment.id;
+
+select Name, Gender, Salary, DepartmentName from tblEmployee cross join tblDepartment
+
+/* ========== Part 13 Advanced or intelligent joins in sql server ========== */
+select * from tblDepartment
+select * from tblEmployee
+
+select Name, Gender, Salary, DepartmentName from tblEmployee E Left Join tblDepartment D on E.DepartmentId = D.id where D.id is null
+
+select Name, Gender, Salary, DepartmentName from tblEmployee E Right Join tblDepartment D on E.DepartmentId = D.id where E.DepartmentId is null
+
+select Name, Gender, Salary, DepartmentName from tblEmployee E FULL join tblDepartment D on E.DepartmentId = D.id where E.DepartmentId is null OR D.id is null
+
+=========================================================================================== 
+=========================================================================================== 
+----------------------------------------------------------------------------------------------------
+						                  14-06-2018
+----------------------------------------------------------------------------------------------------
+
+1) Mattwebsite for excel import and export :-
+
+URL :- https://stackoverflow.comquestions/50409366/call-to-undefined-method-maatwebsite-excel-excelcreate-laravel-5-6
+
+	"require": {
+        "php": "^7.1.3",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "5.5.*",
+        "laravel/tinker": "^1.0",
+        "laravelcollective/html": "^5.2.0",
+        "maatwebsite/excel": "~2.1.0"
+    },
+----------------------------------------------------------------------------------------------------
+						                  15-06-2018
+----------------------------------------------------------------------------------------------------
+2) At a time One User Logout in MultiAuth Functionality :-
+	
+URL :- https://stackoverflow.com/questions/40925632/laravel-5-2-multi-auth-logout-not-working
+
+	public function logout()
+	{
+  		Auth::guard('web')->logout();
+  		Auth::guard('admin')->logout();
+	}
+=====================================================================================================
+3) Toastr notification message display in window :- 
+
+URL :- https://devdojo.com/blog/how-to/toastr-notifications-in-your-laravel-app
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
+
+=====================================================================================================
+4) Multi Auth Forgot / Reset Password :- 
+
+URL :- http://muva.co.ke/blog/part-viii-admin-password-reset-in-our-multiple-authentication-system-for-laravel-5-4/
+
+    - Just Follow Steps
+
+=====================================================================================================
+5) Country / State / City SQL File :-
+
+URL :- https://github.com/hiiamrohit/Countries-States-Cities-database
+----------------------------------------------------------------------------------------------------
+                                        18-06-2018
+----------------------------------------------------------------------------------------------------
+6) XML to JSON && JSON to XML :-
+
+URL :- http://jsfiddle.net/abdmob/gkxucxrj/1/
+
+----------------------------------------------------------------------------------------------------
+                                        20-06-2018
+----------------------------------------------------------------------------------------------------
+7) Nested Ajax Call :-
+
+URL :- https://stackoverflow.com/questions/22233650/jquery-nested-ajax-calls-formatting
+----------------------------------------------------------------------------------------------------
+                                        26-06-2018
+----------------------------------------------------------------------------------------------------
+7) Wordpress Admin Side Menu :-
+
+URL :- https://blog.idrsolutions.com/2014/06/wordpress-plugin-part-1/
+
+----------------------------------------------------------------------------------------------------
+                                        26-06-2018
+----------------------------------------------------------------------------------------------------
+8) Wordpress Shortcode with parameter :-
+
+URL :- https://developer.wordpress.org/plugins/shortcodes/shortcodes-with-parameters/
+
+----------------------------------------------------------------------------------------------------
+                                        2-08-2018
+----------------------------------------------------------------------------------------------------
+9) Load More Functionality If more content :-
+
+URL :- https://codepen.io/elmahdim/pen/sGkvH
+
+
+----------------------------------------------------------------------------------------------------
+                                        11-09-2018
+----------------------------------------------------------------------------------------------------
+10) Wordpress Connect with SQL Server Management Studio :-
+
+Web Url 1 :- https://stackoverflow.com/questions/45613358/sqlstate08001-microsoftodbc-driver-13-for-sql-servertcp-provider-no-conn/46038316
+Web Url 2 :- https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2008/cc793139(v=sql.90)
+Youtube Url :- https://www.youtube.com/watch?v=w3L3G-TMmJA
+
+----------------------------------------------------------------------------------------------------
+                                        08-10-2018
+----------------------------------------------------------------------------------------------------
+11) Full calendar Package [ Laravel ] :-
+
+Youtube URL :   https://www.youtube.com/watch?v=JtMEGbCSqEg&list=PLmLF9T8w4t3GYXb_JFm_YBK0sW4lezwAC
+
+
+----------------------------------------------------------------------------------------------------
+                                        11-10-2018
+----------------------------------------------------------------------------------------------------
+12) PHP DateTime Object issue
+
+Refer URL :- https://stackoverflow.com/questions/6238992/converting-string-to-date-and-datetime
+
+Code :-
+    
+    -----------------
+    Input :-
+    -----------------
+    $time = strtotime('2018-04-16 10:16:00');
+
+    $newformat = date('Y-m-d',$time);
+
+    echo $newformat;
+
+    ------------------
+    Output :-
+    ------------------
+    2018-04-16
+
+
+13) Form Submit Data Handle After Submition
+    REF URL :    https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_and_retrieving_form_data
+
+
+14) Problem : Virtual host not working in Windows IIS [ Displayed IIS Default Page ]
+
+    Youtube URL : https://www.youtube.com/watch?v=Y_kPC5aG0Xo
+    Channel : How to Add website on IIS (Web Server) in windows 10
+
+    => Create every new site folder
+    
+
+15) Youtube Access :
+    Drive Path : C:\Windows\System32\drivers\etc
+    hosts file
+    =>  #   127.0.0.1 www.youtube.com
+
+
+=========================================================================================== 
+=========================================================================================== 
+
+https://w3layouts.com/tennis-hub-sports-category-flat-bootstrap-responsive-web-template/
+https://w3layouts.com/indus-fact-industrial-category-bootstrap-responsive-web-template/
+https://w3layouts.com/enlightenment-educational-category-bootstrap-responsive-web-template/
+https://w3layouts.com/pearly-care-medical-category-bootstrap-responsive-web-template/
+https://w3layouts.com/merged-corporate-category-bootstrap-responsive-web-template/
+https://w3layouts.com/travel-trip-travel-category-bootstrap-responsive-web-template/
+
+
+---------------------------------------------------------------------------------------------
+Backend :- 
+https://w3layouts.com/augment-an-admin-panel-category-flat-bootstrap-responsive-web-template/
+https://w3layouts.com/glance-design-dashboard-bootstrap-responsive-web-template/
+
+
+---------------------------------------------------------------------------------------------
+Frontend-theme :-
+https://w3layouts.com/photocall-photo-gallery-category-bootstrap-responsive-web-template/
+https://w3layouts.com/conceit-corporate-category-bootstrap-responsive-web-template/
+
+
+=========================================================================================== 
+=========================================================================================== 
+
+Wordpress Reference :- 
+
+1) Your=tube Channel
+URL :- LearnWebCode
+
+
+
+
+
+
+
+
+
+
