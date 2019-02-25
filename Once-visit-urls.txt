@@ -1,0 +1,34 @@
+﻿=> Open SSL :- 
+		-	https://www.openssl.org/
+
+=> PDO :-
+		- 	https://www.drupal.org/docs/7/system-requirements/what-is-pdo
+
+=> MBString :- 
+		- 	https://www.interserver.net/tips/kb/what-is-mbstring-and-how-to-enable/
+		- 	http://www.instantshift.com/2014/10/29/mbstring-and-php/
+
+		Example :-
+			How to Enable mbstring in cPanel
+
+			1) Login to cPanel.
+			2) Go to the section ‘Software’.
+			3) Click the icon ‘Select PHP Version’
+			4) Select the php extension ‘mbstring’.
+			5) Click the button ‘Save’.
+
+=> C Type :-
+		- 	https://www.sitepoint.com/an-introduction-to-ctype-functions/
+
+
+
+=> laravel :- 
+	1) https://www.udemy.com/php-with-laravel-for-beginners-become-a-master-in-laravel/
+	2) https://laravel-news.com/eloquent-tips-tricks	
+
+
+=> DataTable Ajax :- 
+		-	https://datatables.net/examples/data_sources/ajax
+
+
+=> https://vimeo.com/191824222

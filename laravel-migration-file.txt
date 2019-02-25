@@ -1,0 +1,77 @@
+==========================================================
+			Laravel 5.6 Migration Notes
+==========================================================
+1) Create Migration file :-
+	- php artisan make:migration create_user_table
+
+2) Create Migration table :-
+	- php artisan migrate
+
+
+Add new Column into DB :-
+-----------------------------------------
+1) Create migration file for Add New Columns to members table :-
+	- php artisan make:migration add_state_to_members [ add column state in UP function and DROP function ] 
+	
+2) Run migration file for adding new column to DB
+	- php artisan migrate
+
+3) Rollback / Remove last stageof changes in DB :-
+	- php artisan migrate:rollback
+
+
+Add Some Columns into DB :-
+------------------------------------------
+1) Create migration file for adding two column state & city into DB
+	- php artisan make:migration add_column_to_members
+
+2) Run your migration file
+	- php artisan migrate
+
+=> Add this content to your migration file :-
+	
+	public function up(){
+		Schema::table('members',function($table){
+			$table->string('city',100)->after('address');
+			$table->string('state',150)->after('address');
+		});
+	}
+
+	public function down(){
+		Schema::table('members',function($table){
+			$table->dropColumn('city');
+			$table->dropColumn('state');
+		});
+	}
+==========================================================================
+		Insert data in members table through migration file
+--------------------------------------------------------------------------
+
+1) up() use for Insert / Update data
+2) down() use for delete data
+
+UP() :-
+	public function up(){
+		DB::table('members')->insert(array(
+			'name' => 'ABC',
+			'age' => '33',
+			'address' => 'A-2, Royal Villa',
+			'city' => 'Vadodara',
+			'state' => 'Gujarat',
+			'created_at' => date('Y-m-d H:m:s'),
+			'updated_at' => date('Y-m-d H:m:s')
+		));
+	}
+
+DOWN() :-
+	public function down(){
+		DB::table('members')->where('name','=','ABC')->delete();
+	}
+
+
+3) php artisan migrate
+
+
+Extra Commands :-
+
+1) php artisan migrate:rollback --step=2
